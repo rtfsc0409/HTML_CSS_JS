@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grid Layout Module</title>
+	<link rel="stylesheet" type="text/css" href="./css/base.css">
+	<style type="text/css">
+		.grid{
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			grid-gap: .5em;
+		}
+		.grid *{
+			background-color: darkgray;
+			color: white;
+			border-radius: .5em;
+			padding: 2em;
+		}
+		body * + *{
+			margin-top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="grid">
+		<div>
+			a
+		</div>
+		<div>
+			b
+		</div>
+		<div>
+			c
+		</div>
+		<div>
+			d
+		</div>
+		<div>
+			e
+		</div>
+		<div>
+			f
+		</div>
+	</div>
+</body>
+</html>

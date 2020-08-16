@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>多外边距折叠</title>
+	<style type="text/css">
+		:root{
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+		}
+		*, ::before, ::after{
+			box-sizing: inherit;
+			-moz-box-sizing: inherit;
+			-webkit-box-sizing: inherit;
+		}
+		body{
+			background-color: #eee;
+		}
+		header{
+			background-color: #7227b6;
+			border-radius: .5em;
+		}
+		main{
+			background-color: #fff;
+			border-radius: .5em;
+		}
+		div{
+			background-color:pink;
+			overflow: auto;/*解决内部子元素外边距在容器外部折叠*/
+			padding: 10px;
+			border: 2px solid blue;
+		}
+		p{
+			margin: 24px 0;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>
+			多外边距折叠
+		</h1>
+	</header>
+	<main>
+		<h2>Come join Us!</h2>
+		<div>
+			<p>
+				Hello everyone! welcome to WuHan , WuHan is a beautiful city , pepole in here is very nice and kind.
+			</p>
+		</div>
+	</main>
+</body>
+</html>

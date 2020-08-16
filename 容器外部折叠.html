@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>容器外部折叠</title>
+	<style type="text/css">
+		:root{
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+		}
+		*, ::before, ::after{
+			box-sizing: inherit;
+			-moz-box-sizing: inherit;
+			-webkit-box-sizing: inherit;
+		}
+		body{
+			background-color: #eee;
+		}
+		header{
+			background-color: #7227b6;
+			border-radius: .5em;
+			overflow: auto;/*这段代码可以解决内部子元素外边距在容器外部折叠*/
+		}
+		main{
+			background-color: #fff;
+			border-radius: .5em;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>
+			容器外部折叠
+		</h1>
+	</header>
+	<main>
+		 <h2>
+		 	Come Join Us!
+		 </h2>
+		 <p>
+		 	Hello everyone! welcome to WuHan , WuHan is a beautiful city , pepole in here is very nice and kind.
+		 </p>
+	</main>
+</body>
+</html>

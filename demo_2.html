@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo 2</title>
+	<style type="text/css">
+		:root{
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			font-family: Helvetica, Arial, sans-serif;
+			background-color: #eee;
+		}
+
+		*, ::before, ::after{
+			box-sizing: inherit;
+		}
+		header{
+			color: #fff;
+			background-color: #0072b0;
+			border-radius: .5em;
+		}
+		main{
+			float: left;
+			width: 70%;
+			background-color: #fff;
+			border-radius: .5em;
+		}
+		aside{
+			float: left;
+			width: calc(30% - 1.5em);
+			background-color: #fff;
+			border-radius: .5em;
+			padding: 1.5em;
+			margin-left: 1.5em;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>
+			Franklin Running Club 等高列
+		</h1>
+	</header>
+	<div class="container">
+		<main>
+			<h2>
+				Come Join Us
+			</h2>
+			<p>
+				The Franklin Running club meets at 6:00pm every Thursday
+				at the town square. Runs are three to five miles, at your
+				own pace.
+			</p>
+			<p>
+				The Franklin Running club meets at 6:00pm every Thursday
+				at the town square. Runs are three to five miles, at your
+				own pace.
+			</p>
+			
+		</main>
+		<aside>
+			<div>
+				<p>
+				The Franklin Running club meets at 6:00pm every Thursday
+				at the town square. Runs are three to five miles, at your
+				own pace.
+			</p>
+			<p>
+				The Franklin Running club meets at 6:00pm every Thursday
+				at the town square. Runs are three to five miles, at your
+				own pace.
+			</p>
+			<p>
+				The Franklin Running club meets at 6:00pm every Thursday
+				at the town square. Runs are three to five miles, at your
+				own pace.
+			</p>
+			<p>
+				The Franklin Running club meets at 6:00pm every Thursday
+				at the town square. Runs are three to five miles, at your
+				own pace.
+			</p>
+			</div>
+			<div>
+				
+			</div>
+		</aside>
+	</div>
+	<script type="text/javascript">
+		
+		function equalHById(){
+
+		}
+		function equalHByTagName(){
+			if(window.getComputedStyle){
+			let el_main = document.getElementsByTagName("main")[0];
+			let style_main = window.getComputedStyle(el_main, null);
+			let height_val_1 = style_main.getPropertyValue("height");
+			let el_aside = document.getElementsByTagName("aside")[0];
+			let style_aside = window.getComputedStyle(el_aside, null);
+			let height_val_2 = style_aside.getPropertyValue("height");
+			console.log(height_val_1, height_val_2);
+			height_val_1 = Number(height_val_1.substring(0, height_val_1.length - 2));
+			height_val_2 = Number(height_val_2.substring(0, height_val_2.length - 2));
+			if(height_val_1 != height_val_2 && height_val_1 > height_val_2)
+				el_aside.style.height = height_val_1 + "px";
+			else
+				el_main.style.height = height_val_2 + "px";
+		}
+		}function equalHByName(){
+
+		}
+	</script>
+</body>
+</html>

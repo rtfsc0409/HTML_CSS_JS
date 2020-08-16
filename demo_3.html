@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo 3</title>
+	<style type="text/css">
+		:root{
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+		}
+		*, ::before, ::after{
+			box-sizing: inherit;
+			-moz-box-sizing: inherit;
+			-webkit-box-sizing: inherit;
+		}
+		#container{
+			width: 500px;
+			background-color: #eee;
+		}
+		/*div{
+			text-align: center;
+		}*/
+		#div1{
+			width: 200px;
+			height: 30px;
+			background-color: #6529b7;
+			border-radius: .5em;
+		}
+		#div2{
+			float: left;
+			width: 300px;
+			height: 70px;
+			background-color: gray;
+			border-radius: .5em;
+			
+		}
+		#div3{
+			float: right;
+			width: 100px;
+			height: 100px;
+			background-color: orange;
+			border-radius: .5em;
+		}
+		#div4{
+			width: 350px;
+			height: 40px;
+			background-color: red;
+			border-radius: .5em;
+		}
+		#test{
+			width: 200px;
+			height: 200px;
+			background-color: green;
+		}
+		.clearfix{
+			clear: both;
+		}
+		/*
+		对float元素的理解：
+			1：float元素会脱离标准文档流，但会对布局有一定的影响，float元素不会占用容器元素的高度。
+			2：以html页面元素的顺序作为参考， float元素不会对它前面的块级元素产生影响，而只会对它前面的行内元素和它之后的元素产生影响，如果它后面的元素也是float元素，其会紧随其后排列，如果一行无法排列会在换行；如果它后面的元素是非float元素，其会与float元素重叠，但这个元素的文字内容会环绕在float元素周围（这是float元素的设计初衷）， 如果它前面是行内元素，行内元素的内容没有达到换行，这个前面的行内元素会围绕着float元素， 行内元素的内容达到了换行，那么行内元素的第一行会在float元素的顶部，换行的内容会围绕着float元素。
+			3：对于清除浮动（clear属性），清除浮动只会对清除浮动元素本身产生影响。
+		*/
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="div1">
+			div1 做人如果没有梦想，跟咸鱼有什么分别呢!
+		</div>
+		<div id="div2">
+			div2 做人如果没有梦想，跟咸鱼有什么分别呢!
+			
+		</div>
+		<div id="div3">
+			<span>看得见我吗？哈哈</span>
+			div 3做人如果没有梦想，跟咸鱼有什么分别呢!
+		</div>
+		<div id="div4">
+			div4做人如果没有梦想，跟咸鱼有什么分别呢!我说的对吗？
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div id="test">
+		<span>test做人如果没有梦想，跟咸鱼有什么分别呢!</span>
+	</div>
+	<span>独占一行</span>
+</body>
+</html>

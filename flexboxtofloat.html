@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FlexBoxToFloat</title>
+	<link rel="stylesheet" type="text/css" href="./css/base.css">
+	<style type="text/css">
+		.container{
+			max-width: 1280px;
+			margin: 0 auto;
+			padding-bottom: 1em;
+		}
+		.float-left{
+			float: left;
+		}
+		.float-right{
+			float: right;
+		}
+		header h1{
+			padding: 0 .5rem;
+		}
+		li.float-left, li.float-right{
+			list-style-type: none;
+			padding-left: 0;
+		}
+		li.float-left a, li.float-right a{
+			display: block;
+			text-decoration: none;
+			padding: .5em 1em;
+			background-color: #cc6b5a;
+			border-radius: .3em;
+			color: white;
+		}
+		nav{
+			margin: 0;
+			background-color: #5f4b44;
+			border-radius: .3em;
+			padding: .5em;
+		}
+		nav ul{
+			padding-left: 0;
+			margin: 0;
+		}
+		nav ul * + *{
+			margin-left: 1em;
+		}
+		nav ul::after{
+			display: block;
+			clear: both;
+			content: " ";
+		}
+		nav ul * + *{
+			margin-top: 0;
+		}
+		main{
+			width: 100%;
+		}
+		.main-left{
+			width: 66%;
+			padding-left: .5em;
+		}
+		.main-right{
+			width: 33%;
+		}
+		main::after{
+			display: block;
+			content: " ";
+			clear: both;
+		}
+		main > div + div{
+			margin-top: 0;
+			margin-left: 1%;
+		}
+		div.main-left, div.login, div.pricing{
+			background-color: white;
+			border-radius: .3em;
+		}
+		.login h3{
+			margin: 0;
+			text-align: right;
+			text-transform: uppercase;
+			padding: .5em 1em;
+		}
+		.login label{
+			display: block;
+		}
+		.login form{
+			padding: .5em;
+		}
+		.login form * + *{
+			margin-top: 0;
+		}
+		.login p * + *{
+			margin-top: 0;
+		}
+		.login input{
+			width: 100%;
+			border-radius: .3em;
+			border: 1px solid gray;
+			font-size: 1.2em;
+		}
+		.login button{
+			background-color: #cc6b5a;
+			color: white;
+			border-radius: .3em;
+			border: 1px solid #cc6b5a;
+			padding: .5em 1em;
+		}
+		.pricing{
+			text-align: center;
+			overflow: auto;
+		}
+		.pricing small{
+			font-size: 1.2em;
+		}
+		.pricing div{
+			margin-top: 0;
+		}
+		
+		.centered{
+			width: 122px;
+			margin: 0 auto;
+		}
+		.centered::after{
+			display: block;
+			content: " ";
+			clear: both;
+		}
+		.pricing a{
+			display: block;
+			margin: 0 1em 1em 1em;
+			background-color: #cc6b5a;
+			color: white;
+			border-radius: .3em;
+			padding: .5em 1em;
+			text-decoration: none;
+		}
+		.currency{
+			font-size: 2em;
+			vertical-align: text-top;
+		}
+		.dollars{
+			font-size: 4em;
+			vertical-align: text-top;
+		}
+		.cents{
+			font-size: 1.2em;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>FlexBox Demo</h1>
+			<nav>
+				<ul>
+					<li class="float-left">
+						<a href="http://www.baidu.com">Home</a>					
+					</li>
+					<li class="float-left">
+						<a href="http://www.baidu.com">Feature</a>				
+					</li>
+					<li class="float-left">
+						<a href="http://www.baidu.com">Pricing</a>				
+					</li>
+					<li class="float-left">
+						<a href="http://www.baidu.com">Support</a>				
+					</li>
+					<li class="float-right">
+						<a href="http://www.baidu.com">About</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main class="">
+			<div class="main-left float-left">
+				<h1 class="">Team collaboration dome right</h1>
+				<p>
+					Thousands of teams from all over the world turn to <b>Ink</b> to communicate and get things done.
+				</p>
+				<h1 class="">Team collaboration dome right</h1>
+				<p>
+					Thousands of teams from all over the world turn to <b>Ink</b> to communicate and get things done.
+				</p>
+				<h1 class="">Team collaboration dome right</h1>
+				<p>
+					Thousands of teams from all over the world turn to <b>Ink</b> to communicate and get things done.
+				</p>
+				<h1 class="">Team collaboration dome right</h1>
+				<p>
+					Thousands of teams from all over the world turn to <b>Ink</b> to communicate and get things done.
+				</p>
+				<h1 class="">Team collaboration dome right</h1>
+				<p>
+					Thousands of teams from all over the world turn to <b>Ink</b> to communicate and get things done.
+				</p>
+				<h1 class="">Team collaboration dome right</h1>
+				<p>
+					Thousands of teams from all over the world turn to <b>Ink</b> to communicate and get things done.
+				</p>
+			</div>
+			<div class="main-right float-left">
+				<div class="login">
+					<form>
+						<h3>login</h3>
+						<p>
+							<label for="username">UserName:</label>
+							<input id="username" type="text" name="username">	
+						</p>
+						<p>
+							<label for="password">Password:</label>
+							<input id="password" type="password" name="password">
+						</p>
+						<button type="submit">Login</button>
+					</form>
+				</div>
+				<div class="pricing">
+					<small>Staring at</small>
+					<div class="">
+						<div class="centered">
+							<div class="float-left" style="padding: 1.2em 0;">
+								<span class="currency">$</span>
+							</div>
+							<div class="float-left">
+								<span class="dollars">20</span>
+								<span class="cents">.00</span>
+							</div>
+						</div>
+					</div>
+					<a href="http://www.baidu.com">Sign Up</a>
+				</div>
+			</div>
+		</main>
+	</div>
+	
+</body>
+</html>

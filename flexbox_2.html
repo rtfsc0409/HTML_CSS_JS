@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FlexBox Demo</title>
+	<link rel="stylesheet" type="text/css" href="./css/base.css">
+	<style type="text/css">
+		.clear-margin-top{
+			margin-top: 0;
+		}
+		.container{
+			max-width: 1280px;
+			margin: 0 auto;
+			padding-bottom: 1em;
+		}
+		header{
+			overflow: auto;
+		}
+		.nav{
+			display: flex;
+			list-style-type: none;
+			padding: .5em;
+			margin: 0;
+			background-color: #5f4b44;
+			border-radius: .3em;
+		}
+		.nav li + li{
+			margin-top: 0;
+			margin-left: 1.5em;
+		}
+		.nav-right{
+			margin-left: auto !important;
+		}
+		.nav li a{
+			display: inline-block;
+			padding: 0.5em 1em;
+			background-color: #cc6b5a;
+			color: white;
+			text-decoration: none;
+			border-radius: .3em;
+		}
+		.flex{
+			display: flex;
+		}
+		.flex .main{
+			flex: 2;
+			margin-right: 1.5em;
+			background-color: white;
+			border-radius: .3em;
+			padding: .5em;
+		}
+
+		.flex .aside{
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+		}
+		.aside .login{
+			background-color: white;
+			border-radius: .3em;
+		}
+		.aside .pricing{
+			background-color: white;
+			border-radius: .3em;
+		}
+		form{
+			padding: .5em;
+		}
+		form label{
+			display: block;
+		}
+		form input{
+			display: block;
+			width: 100%;
+			font-size: 1.5em;
+			border-radius: .3em;
+			border: 1px solid gray;
+		}
+		form * + *{
+			margin-top: 0;
+		}
+		form h3{
+			text-align: right;
+			text-transform: uppercase;
+		}
+		form button{
+			background-color: white;
+			padding: .5em 1em;
+			border-radius: .3em;
+			border: 1px solid #cc6b5a;
+		}
+		.pricing{
+			text-align: center;
+			padding: .5em;
+		}
+		.pricing .flex{
+			justify-content: center;
+		}
+		.pricing span + span{
+			margin-top: 0;
+		}
+		.pricing > * + *{
+			margin-top: 0;
+		}
+		.currency{
+			font-size: 2rem;
+			align-self: center;
+		}
+		.dollars{
+			font-size: 4rem;
+		}
+		.cents{
+			font-size: 1.2rem;
+		}
+		.pricing a{
+			display: block;
+			background-color: #cc6b5a;
+			color: white;
+			padding: .5em 1em;
+			text-decoration: none;
+			border-radius: .3em;
+		}
+		.pricing small{
+			text-transform: uppercase;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>FlexBox Demo</h1>
+		</header>
+		<nav class="clear-margin-top">
+			<ul class="nav">
+				<li><a href="http://www.baidu.com">Home</a></li>
+				<li><a href="http://www.baidu.com">Feature</a></li>
+				<li><a href="http://www.baidu.com">Pricing</a></li>
+				<li><a href="http://www.baidu.com">Support</a></li>
+				<li class="nav-right"><a href="http://www.baidu.com">About</a></li>
+			</ul>
+		</nav>
+		<main class="flex">
+			<div class="main">
+				<h1 class="clear-margin-top">Team collaboration dome right</h1>
+				<p>
+					Thousands of teams from all over the world turn to <b>Ink</b> to communicate and get things done.
+				</p>
+			</div>
+			<div class="aside clear-margin-top">
+				<div class="login">
+					<form>
+						<h3>login</h3>
+						<p>
+							<label for="username">UserName:</label>
+							<input id="username" type="text" name="username">	
+						</p>
+						<p>
+							<label for="password">Password:</label>
+							<input id="password" type="password" name="password">
+						</p>
+						<button type="submit">Login</button>
+					</form>
+				</div>
+				<div class="pricing">
+					<small>Staring at</small>
+					<div class="flex">
+						<span class="currency">$</span>
+						<span class="dollars">20</span>
+						<span class="cents">.00</span>
+					</div>
+					<a href="http://www.baidu.com">Sign Up</a>
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+</html>
