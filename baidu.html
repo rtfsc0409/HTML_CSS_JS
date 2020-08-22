@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>百度设计</title>
+	<style type="text/css">
+		:root{
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+		}
+		*, ::after, ::before{
+			box-sizing: inherit;
+			-moz-box-sizing: inherit;
+			-webkit-box-sizing: inherit;
+		}
+		body{
+			margin: 0;
+			font-family: "PingFang SC",Arial,"Microsoft YaHei",sans-serif;
+			font-size: 12px;
+		}
+		a:link{
+			color: #333;
+			text-decoration: none;
+		}
+		a:visited{
+			color: #333;
+		}
+		a:active{
+			color: #333;
+		}
+		a:hover{
+			color: #4e71f2;
+			text-decoration: none;
+		}
+		.container{
+			background-color: #fff;
+		}
+		nav{
+			margin-top: 1em;
+		}
+		.menu{
+			list-style-type: none;
+			padding-left: 0;
+			margin: 0;
+		}
+		.menu::after{
+			display: block;
+			content: ' ';
+			clear: both;
+		}
+		.menu > li.left > div{
+			position: relative;
+		}
+		.menu > li.left.is-open .sub-menu-1{
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr .5fr;
+			grid-gap: 1.5em;
+		}
+		.menu > li.right.is-open .sub-menu-2{
+			display: block;
+		}
+		#more-menu-1, #more-menu-2{
+			padding-bottom: 1em;
+		}
+		.sub-menu-1{
+			/*background-color: #9195a3;*/
+			position: absolute;
+			top: 2em;
+			right: 0em;
+			display: none;
+			box-shadow: 0 2px 10px 0 rgba(0,0,0,.15);
+			border-radius: 1em;
+			padding: 1em;
+		}
+		.sub-menu-1 img{
+			width: 42px;
+			height: 42px;
+			border-radius: .8em;
+			border: .5px solid #eee;
+		}
+		.sub-menu-1 a{
+			display: block;
+		}
+		.sub-menu-1__title, .sub-menu-1__img{
+			text-align: center;
+			width: 60px;
+		}
+		.all-proc{
+			grid-column: 1 / 5;
+			grid-row: span 1;
+			text-align: center;
+			font-size: 1.2em;
+		}
+		.all-proc a{
+			color: #9195a3;
+		}
+		.all-proc a:hover{
+			color: #4e71f2;
+		}
+		.sub-menu-2{
+			/*background-color: #9195a3;*/
+			position: absolute;
+			top: 3em;
+			right: 6em;
+			padding: 1em;
+			display: none;
+			box-shadow: 0 2px 10px 0 rgba(0,0,0,.15);
+			border-radius: .7em;
+		}
+		.sub-menu-2 > ul{
+			padding-left: 0;
+			list-style-type: none;
+			/*width: 4em;*/
+		}
+		.sub-menu-2 > ul > li + li{
+			margin-top: .5em;
+		}
+		.left{
+			float: left;
+		}
+		.right{
+			float: right;
+		}
+		li.left{
+			display: inline;
+			margin-left: 2em;
+		}
+		li.right{
+			margin-right: 2em;
+		}
+		li a{
+			vertical-align: middle;
+		}
+		.login{
+			border-radius: .5em;
+			border: 1px solid #4e71f2;
+			background-color: #4e71f2;
+			padding: .2em 1em;
+			position: relative;
+			top: -0.3em;
+		}
+		.login a:link, .login a:hover, .login a:visited, .login a:active{
+			color: #fff;
+		}
+		main{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		main div{
+			flex: 1;
+		}
+		main div a{
+			display: inline-block;
+		}
+		main div a img{
+			width: 25vw;
+			height: 17vw;
+		}
+		main input{
+			width: 45vw;
+			padding: .5em 1em;
+			font-size: 1.5em;
+			border-top: 1.5px solid rgb(196, 199, 206);
+			border-bottom: 1.5px solid rgb(196, 199, 206);
+			border-left: 1.5px solid rgb(196, 199, 206);
+			border-top-left-radius: .5em;
+			border-bottom-left-radius: .5em;
+			border-right: 0;
+			outline: none;
+			vertical-align: top;
+		}
+		main input:focus{
+			border-top: 1.5px solid #4e71f2;
+			border-bottom: 1.5px solid #4e71f2;
+			border-left: 1.5px solid #4e71f2;
+		}
+		main button{
+			background-color: #4e71f2;
+			border: 1.5px solid #4e71f2;
+			border-top-right-radius: .5em;
+			border-bottom-right-radius: .5em;
+			color: #fff;
+			font-size: 1.5em;
+			padding: .417em 1em;
+			margin-left: -.2em;
+			outline: none;
+		}
+		footer{
+			background-color: #fbfbfb;
+			position: fixed;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: .5em 1em;
+			display: flex;
+		}
+		footer > div{
+			flex: 1;
+		}
+		footer > div > ul{
+			margin: 0;
+			padding-left: 0;
+			list-style-type: none;
+		}
+		footer > div > ul::after{
+			display: block;
+			content: ' ';
+			clear: both;
+		}
+		footer > div > ul li{
+			color: #9195a3;
+		}
+		footer.link a{
+			color: #9195a3;
+		}
+		div.hot{
+			display: flex;
+			min-width: 50em;
+			margin-top: 1.5em;
+		}
+		div.hot > div{
+			flex: 1;
+		}
+		div.hot > div > ul{
+			list-style-type: none;
+			padding-left: 0;
+			font-size: 1.2em;
+		}
+		div.hot > div > ul > li{
+			margin-top: 1em;
+		}
+		div.hot span{
+			background-image: url(./img/top_1.png);
+			color: #fff;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 20px;
+		}
+		.right-pos{
+			position: relative;
+			right: -15em;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav>
+			<ul class="menu">
+				<li class="left">
+					<a href="http://www.baidu.com">新闻</a>
+				</li>
+				<li class="left">
+					<a href="http://www.baidu.com">hao122</a>
+				</li>
+				<li class="left">
+					<a href="http://www.baidu.com">地图</a>
+				</li>
+				<li class="left">
+					<a href="http://www.baidu.com">视频</a>
+				</li>
+				<li class="left">
+					<a href="http://www.baidu.com">贴吧</a>
+				</li>
+				<li class="left">
+					<a href="http://www.baidu.com">学术</a>
+				</li>
+				<li id="more-menu-1" class="left">
+					<div>
+						<a href="http://www.baidu.com">更多</a>
+						<div class="sub-menu-1">
+							<div>
+								<a href="https:www.baidu.com">
+									<div class="sub-menu-1__img">
+										<img src="./img/wangpan.png" alt="网盘">
+									</div>
+									<div class="sub-menu-1__title">
+										<span>网盘</span>
+									</div>
+								</a>
+							</div>
+							<div>
+								<a href="https://www.baidu.com">
+									<div class="sub-menu-1__img">
+										<img src="./img/zhidao.png" alt="知道">
+									</div>
+									<div class="sub-menu-1__title">
+										<span>知道</span>
+									</div>
+								</a>
+							</div>
+							<div>
+								<a href="https://www.baidu.com">
+									<div class="sub-menu-1__img">
+										<img src="./img/baike.png" alt="百科">
+									</div>
+									<div class="sub-menu-1__title">
+										<span>百科</span>
+									</div>
+								</a>
+							</div>
+							<div>
+								<a href="https://www.baidu.com">
+									<div class="sub-menu-1__img">
+										<img src="./img/tupian.png" alt="图片">
+									</div>
+									<div class="sub-menu-1__title">
+										<span>图片</span>
+									</div>
+								</a>
+							</div>
+							<div>
+								<a href="https://www.baidu.com">
+									<div class="sub-menu-1__img">
+										<img src="./img/baobaozhidao.png" alt="宝宝知道">
+									</div>
+									<div class="sub-menu-1__title">
+										<span>宝宝知道</span>
+									</div>
+								</a>
+							</div>
+							<div>
+								<a href="https://www.baidu.com">
+									<div class="sub-menu-1__img">
+										<img src="./img/wenku.png" alt="文库">
+									</div>
+									<div class="sub-menu-1__title">
+										<span>文库</span>
+									</div>
+								</a>
+							</div>
+							<div>
+								<a href="https://www.baidu.com">
+									<div class="sub-menu-1__img">
+										<img src="./img/jingyan.png" alt="经验">
+									</div>
+									<div class="sub-menu-1__title">
+										<span>经验</span>
+									</div>
+								</a>
+							</div>
+							<div>
+								<a href="https://www.baidu.com">
+									<div class="sub-menu-1__img">
+										<img src="./img/yinyue.png" alt="音乐">
+									</div>
+									<div class="sub-menu-1__title">
+										<span>音乐</span>
+									</div>
+								</a>
+							</div>
+							<div class="all-proc">
+								<a href="https://www.baidu.com">查看全部百度产品></a>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="right login">
+					<a href="http://www.baidu.com">登录</a>
+				</li>
+				<li id="more-menu-2" class="right">
+					<div>
+						<a href="http://www.baidu.com">设置</a>
+						<div class="sub-menu-2">
+							<ul>
+								<li>
+									<a href="https://www.baidu.com">搜索设置</a>
+								</li>
+								<li>
+									<a href="https://www.baidu.com">高级搜索</a>
+								</li>
+								<li>
+									<a href="https://www.baidu.com">关闭预测</a>
+								</li>
+								<li>
+									<a href="https://www.baidu.com">隐私设置</a>		
+								</li>
+								<li>
+									<a href="https://www.baidu.com">关闭热榜</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+				</li>
+			</ul>
+		</nav>
+		<main>
+			<div>
+				<a href="https://www.baidu.com"><img src="./img/baidu.png"></a>
+			</div>
+			<div>
+				<form>
+					<input type="text" name="">
+					<button type="submit">百度一下</button>
+				</form>
+			</div>
+			<div class="hot">
+				<div>
+					<ul>
+						<li>
+							<a href="https://www.baidu.com">百度热榜</a>
+						</li>
+						<li>
+							<span>1</span><a href="https://www.baidu.com">牵狗女孩向老人家属道歉</a>
+						</li>
+						<li>
+							<span>2</span><a href="https://www.baidu.com">美政府允许美企在中国使用微信</a>
+						</li>
+						<li>
+							<span>3</span><a href="https://www.baidu.com">吴尊友谈秋冬疫情是否会转土重来</a>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<ul>
+						<li><a class="right-pos" href="https://www.baidu.com">换一换</a></li>
+
+						<li>
+							<span>4</span><a href="https://www.baidu.com">牵狗女孩向老人家属道歉</a>
+						</li>
+						<li>
+							<span>5</span><a href="https://www.baidu.com">牵狗女孩向老人家属道歉</a>
+						</li>
+						<li>
+							<span>6</span><a href="https://www.baidu.com">牵狗女孩向老人家属道歉</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</main>
+		<footer class="link">
+			<div>
+				<ul>
+					<li class="left"><a href="http://www.baidu.com">设为首页</a></li>
+					<li class="left"><a href="http://www.baidu.com">关于百度</a></li>
+					<li class="left"><a href="http://www.baidu.com">About Baidu</a></li>
+					<li class="left"><a href="http://www.baidu.com">百度营销</a></li>
+					<li class="left"><a href="http://www.baidu.com">使用百度前必读</a></li>
+					<li class="left"><a href="http://www.baidu.com">意见反馈</a></li>
+					<li class="left"><a href="http://www.baidu.com">帮助中心</a></li>
+				</ul>
+			</div>
+			<div>
+				<ul>
+
+					<li class="right"><span>京ICP证030173号</span></li>
+					<li class="right"><a href="http://www.baidu.com">京公网安备11000002000001号</a></li>
+					<li class="right"><span>(京)-经营性-2017-0020</span></li>
+					<li class="right"><span style="vertical-align: middle;">©2020&nbsp;Baidu&nbsp;</span></li>
+				</ul>
+			</div>
+		</footer>
+	</div>
+	<script type="text/javascript">
+		!function(){
+			var btn1 = document.getElementById("more-menu-1");
+			btn1.addEventListener('mouseenter', function(event){
+				event.preventDefault();
+				btn1.classList.add('is-open');
+			});
+			btn1.addEventListener('mouseleave', function(event){
+				event.preventDefault();
+				btn1.classList.remove('is-open');
+			});
+			var btn2 = document.getElementById("more-menu-2");
+			btn2.addEventListener('mouseenter', function(event){
+				event.preventDefault();
+				btn2.classList.add('is-open');
+			});
+			btn2.addEventListener('mouseleave', function(event){
+				event.preventDefault();
+				btn2.classList.remove('is-open');
+			});
+		}();
+	</script>
+</body>
+</html>
